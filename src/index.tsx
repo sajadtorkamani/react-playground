@@ -1,37 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
-import ErrorPage from './components/ErrorPage'
-import UseEffectNoDependencies from './examples/useEffect/no-dependencies'
-import Layout from './components/Layout'
-
-export const ROUTES = {
-  root: '/',
-  useEffectNoDependencies: 'examples/useEffect/noDependencies'
-}
-
-const router = createBrowserRouter([
-  {
-    path: ROUTES.root,
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: ROUTES.useEffectNoDependencies,
-        element: <UseEffectNoDependencies />
-      }
-    ]
-  }
-])
+import { router } from './router'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-)
+root.render(<RouterProvider router={router} />)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
