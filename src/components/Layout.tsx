@@ -11,8 +11,8 @@ const Layout: React.FC = () => (
       </Link>
     </header>
 
-    <main className="flex">
-      <div className="px-4 mb-4 text-sm border-r border-r-gray-300">
+    <main className="flex-col md:flex-row">
+      <div className="px-4 mb-4 text-sm md:border-r md:border-r-gray-300">
         <Navigation />
       </div>
 
