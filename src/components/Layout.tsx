@@ -16,7 +16,7 @@ const Layout: React.FC = () => (
         <Navigation />
       </div>
 
-      <div className="p-4">
+      <div className="px-4">
         <Outlet />
       </div>
     </main>
