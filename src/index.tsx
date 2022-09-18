@@ -1,13 +1,35 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
+import ErrorPage from './components/ErrorPage'
+import UseEffectNoDependencies from './examples/useEffect/no-dependencies'
+import Layout from './components/Layout'
+
+export const ROUTES = {
+  root: '/',
+  useEffectNoDependencies: 'examples/useEffect/noDependencies'
+}
+
+const router = createBrowserRouter([
+  {
+    path: ROUTES.root,
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: ROUTES.useEffectNoDependencies,
+        element: <UseEffectNoDependencies />
+      }
+    ]
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 )
 
