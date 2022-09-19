@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import classNames from 'classnames'
 
 const Console: React.FC = () => {
   const [log, setLog] = useState<string[]>([])
@@ -32,7 +33,12 @@ const Console: React.FC = () => {
       {log.length > 0 && (
         <ul className="text-[12px] mt-1">
           {log.map((message, index) => (
-            <div key={index} className="border-b py-[2px]">
+            <div
+              key={index}
+              className={classNames('py-[2px]', {
+                ['border-b']: index < log.length - 1,
+              })}
+            >
               {message}
             </div>
           ))}
