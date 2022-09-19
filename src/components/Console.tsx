@@ -36,7 +36,7 @@ const Console: React.FC = () => {
             <div
               key={index}
               className={classNames('py-[2px]', {
-                ['border-b']: index < log.length - 1,
+                'border-b': index < log.length - 1,
               })}
             >
               {message}
