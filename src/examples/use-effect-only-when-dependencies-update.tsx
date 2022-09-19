@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Console from '../components/Console'
+import useIsFirstRender from '../lib/hooks/useIsFirstRender'
 
-const UseEffectWithDependencies: React.FC = () => {
+const UseEffectOnlyWhenDependenciesUpdate: React.FC = () => {
+  const isFirstRender = useIsFirstRender()
   const [name, setName] = useState('')
 
   useEffect(() => {
-    console.log(`Name has changed to "${name}"`)
+    if (!isFirstRender) {
+      console.log(`Name has changed to "${name}"`)
+    }
   }, [name])
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -27,4 +31,4 @@ const UseEffectWithDependencies: React.FC = () => {
   )
 }
 
-export default UseEffectWithDependencies
+export default UseEffectOnlyWhenDependenciesUpdate

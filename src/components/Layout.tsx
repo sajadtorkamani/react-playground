@@ -12,11 +12,11 @@ const Layout: React.FC = () => (
     </header>
 
     <main className="md:flex md:flex-row">
-      <div className="px-4 mb-4 text-sm md:border-r md:border-r-gray-300">
+      <div className="p-4 mb-4 text-[12px]">
         <Navigation />
       </div>
 
-      <div className="px-4">
+      <div className="px-4 md:min-w-[500px]">
         <Outlet />
       </div>
     </main>

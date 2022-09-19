@@ -1,3 +1,3 @@
 export function logMessage(message?: string) {
-  console.count(`${window.location.pathname}${message || ''}`)
+  console.log('Inside useEffect')
 }

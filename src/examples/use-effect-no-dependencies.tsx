@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react'
-import Placeholder from '../components/Placeholder'
-import { logMessage } from '../lib/utils'
+import Console from '../components/Console'
 
 const UseEffectNoDependencies: React.FC = () => {
   useEffect(() => {
-    logMessage()
+    console.log('Inside useEffect')
   })
 
-  return <Placeholder />
+  return <Console />
 }
 
 export default UseEffectNoDependencies
