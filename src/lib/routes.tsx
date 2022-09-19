@@ -5,6 +5,7 @@ import UseEffectWithDependencies from '../examples/use-effect-with-dependencies'
 import UseEffectOnlyWhenDependenciesUpdate from '../examples/use-effect-only-when-dependencies-update'
 import UseEffectCleanUpBehaviour from '../examples/use-effect-clean-up-behaviour'
 import BatchedStateUpdatesSynchronous from '../examples/batched-state-updates-synchronous'
+import BatchedStateUpdatesAsynchronousNested from '../examples/batched-state-updates--asynchronous-nested'
 
 interface AppRoute {
   name: string
@@ -15,6 +16,8 @@ interface AppRoute {
 export const ROUTES = {
   root: '/',
   batchedStateUpdatesSynchronous: '/batched-state-updates--synchronous',
+  batchedStateUpdatesAsynchronousNested:
+    '/batched-state-updates--asynchronous-nested',
   useEffectCleanUpBehaviour: '/use-effect-clean-up-behaviour',
   useEffectNoDependencies: '/use-effect-no-dependencies',
   useEffectEmptyDependencies: '/use-effect-empty-dependencies',
@@ -23,6 +26,11 @@ export const ROUTES = {
     '/use-effect-only-when-dependencies-update',
 }
 export const AppRoutes: AppRoute[] = [
+  {
+    name: 'Batched state updates (asynchronous & nested)',
+    path: ROUTES.batchedStateUpdatesAsynchronousNested,
+    element: <BatchedStateUpdatesAsynchronousNested />,
+  },
   {
     name: 'Batched state updates (synchronous)',
     path: ROUTES.batchedStateUpdatesSynchronous,
