@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Console from '../components/Console'
 import Button from '../components/Button'
+import SourceCodeLink from '../components/SourceCodeLink'
 
 const UseEffectCleanUpBehaviour: React.FC = () => {
   const [count, setCount] = useState(0)
@@ -44,7 +45,9 @@ const UseEffectCleanUpBehaviour: React.FC = () => {
       <Button onClick={() => setCount((prevCount) => prevCount + 1)}>
         Trigger effect
       </Button>
+
       <Console />
+      <SourceCodeLink />
     </>
   )
 }

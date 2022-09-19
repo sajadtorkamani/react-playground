@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Console from '../components/Console'
+import SourceCodeLink from '../components/SourceCodeLink'
 
 const UseEffectWithDependencies: React.FC = () => {
   const [name, setName] = useState('')
@@ -23,6 +24,7 @@ const UseEffectWithDependencies: React.FC = () => {
       />
 
       <Console />
+      <SourceCodeLink />
     </>
   )
 }
