@@ -3,6 +3,7 @@ import UseEffectEmptyDependencies from '../examples/use-effect-empty-dependencie
 import UseEffectNoDependencies from '../examples/use-effect-no-dependencies'
 import UseEffectWithDependencies from '../examples/use-effect-with-dependencies'
 import UseEffectOnlyWhenDependenciesUpdate from '../examples/use-effect-only-when-dependencies-update'
+import UseEffectCleanUpBehaviour from '../examples/use-effect-clean-up-behaviour'
 
 interface AppRoute {
   name: string
@@ -12,6 +13,7 @@ interface AppRoute {
 
 export const ROUTES = {
   root: '/',
+  useEffectCleanUpBehaviour: '/use-effect-clean-up-behaviour',
   useEffectNoDependencies: '/use-effect-no-dependencies',
   useEffectEmptyDependencies: '/use-effect-empty-dependencies',
   useEffectWithDependencies: '/use-effect-with-dependencies',
@@ -19,6 +21,11 @@ export const ROUTES = {
     '/use-effect-only-when-dependencies-update',
 }
 export const AppRoutes: AppRoute[] = [
+  {
+    name: 'useEffect: clean up behaviour',
+    path: ROUTES.useEffectCleanUpBehaviour,
+    element: <UseEffectCleanUpBehaviour />,
+  },
   {
     name: 'useEffect: no dependencies',
     path: ROUTES.useEffectNoDependencies,

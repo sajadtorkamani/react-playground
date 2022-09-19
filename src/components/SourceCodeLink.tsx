@@ -8,7 +8,7 @@ const SourceCodeLink: React.FC = () => {
   return (
     <a
       href={href}
-      className="text-[12px] text-blue-800 underline mt-3"
+      className="text-[12px] text-blue-800 underline mt-3 block"
       target="_blank"
       rel="noreferrer"
     >

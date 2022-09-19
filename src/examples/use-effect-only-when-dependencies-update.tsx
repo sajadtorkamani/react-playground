@@ -28,7 +28,6 @@ const UseEffectOnlyWhenDependenciesUpdate: React.FC = () => {
       />
 
       <Console />
-
       <SourceCodeLink />
     </>
   )
