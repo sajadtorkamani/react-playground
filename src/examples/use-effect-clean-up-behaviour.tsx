@@ -38,9 +38,9 @@ const UseEffectCleanUpBehaviour: React.FC = () => {
   return (
     <>
       <p>
-        Clicking 'Trigger effect' will intentionally execute a very loop so this
-        page might become unresponsive for a few seconds. Don't double click the
-        button.
+        Clicking 'Trigger effect' will intentionally execute a very long loop so
+        this page might become unresponsive for a few seconds. Don't double
+        click the button.
       </p>
       <Button onClick={() => setCount((prevCount) => prevCount + 1)}>
         Trigger effect
