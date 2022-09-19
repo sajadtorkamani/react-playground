@@ -36,7 +36,11 @@ const UseEffectCleanUpBehaviour: React.FC = () => {
 
   return (
     <>
-      <p>Open DevTools to activate debugger breakpoints.</p>
+      <p>
+        Clicking 'Trigger effect' will intentionally execute a very long for
+        loop so this page might become unresponsive for a few seconds. Don't
+        double click the button.
+      </p>
       <Button onClick={() => setCount((prevCount) => prevCount + 1)}>
         Trigger effect
       </Button>

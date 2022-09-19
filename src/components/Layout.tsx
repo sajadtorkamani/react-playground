@@ -16,7 +16,7 @@ const Layout: React.FC = () => (
         <Navigation />
       </div>
 
-      <div className="px-4 md:min-w-[500px]">
+      <div className="px-4 md:min-w-[500px] md:max-w-xl">
         <Outlet />
       </div>
     </main>
