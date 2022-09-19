@@ -31,15 +31,16 @@ const BatchedStateUpdatesAsynchronousNested: React.FC = () => {
   return (
     <>
       <p>
-        Clicking on 'Increment' will trigger an event handler that updates
-        multiple pieces of state both synchronously and asynchronously (inside a
-        Promise callback).
+        Clicking on 'Increment' will trigger an event handler that triggers two
+        batched state updates.
       </p>
 
       <p>
-        In these cases, React will batch the synchronous updates first and then
-        batch the asynchronous updates when the callback is ready to be
-        processed.
+        The first batch contains the state updates that occur outside an async
+        callback. The second batch contains the updates inside the async
+        callback{` `}
+        (<SourceCodeLink className="inline" />
+        ).
       </p>
 
       <Button onClick={handleClick}>Increment</Button>
