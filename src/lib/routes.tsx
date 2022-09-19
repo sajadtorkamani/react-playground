@@ -15,8 +15,8 @@ export const ROUTES = {
   useEffectNoDependencies: '/use-effect-no-dependencies',
   useEffectEmptyDependencies: '/use-effect-empty-dependencies',
   useEffectWithDependencies: '/use-effect-with-dependencies',
-  useEffectOnlyWhenDependenciesChange:
-    '/use-effect-only-when-dependencies-change',
+  useEffectOnlyWhenDependenciesUpdate:
+    '/use-effect-only-when-dependencies-update',
 }
 export const AppRoutes: AppRoute[] = [
   {
@@ -36,7 +36,7 @@ export const AppRoutes: AppRoute[] = [
   },
   {
     name: 'useEffect: only when dependencies change',
-    path: ROUTES.useEffectOnlyWhenDependenciesChange,
+    path: ROUTES.useEffectOnlyWhenDependenciesUpdate,
     element: <UseEffectOnlyWhenDependenciesUpdate />,
   },
 ]
