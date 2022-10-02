@@ -9,9 +9,15 @@ const ContextPartialUpdates: React.FC = () => {
   return (
     <AppSettingsProvider>
       <p>
-        Updating the `theme` from the context triggers a re-render of the
-        `DateSettings` component too even though `DateSettings` doesn't use
-        `theme`.
+        Updating `theme` from the `AppSettings` context triggers a re-render of
+        every consumer of the `AppSettings` context, even for consumers that
+        don't use `theme`.
+      </p>
+
+      <p>
+        So, in this case, updating `theme` from inside `ThemeSettings` also
+        triggers a re-render of `DateSettings` - something you don't usually
+        want.
       </p>
 
       <div className="mb-3">
