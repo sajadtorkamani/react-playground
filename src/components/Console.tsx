@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
+import Card from './Card'
 
 const Console: React.FC = () => {
   const [log, setLog] = useState<string[]>([])
@@ -21,30 +22,35 @@ const Console: React.FC = () => {
     setLog([])
   }
 
-  return (
-    <section className="block border py-2 px-3 text-sm mt-3 text-gray-600">
-      <header className="flex justify-between items-center">
-        <h2>Console</h2>
-        <button className="text-[12px] italic" onClick={clearLog}>
-          Clear
-        </button>
-      </header>
+  function renderLog() {
+    if (log.length === 0) {
+      return (
+        <div className="italic text-gray-400 text-xs">
+          {'<'}Empty{'>'}
+        </div>
+      )
+    }
 
-      {log.length > 0 && (
-        <ul className="text-[12px] mt-1">
-          {log.map((message, index) => (
-            <div
-              key={index}
-              className={classNames('py-[2px]', {
-                'border-b': index < log.length - 1,
-              })}
-            >
-              {message}
-            </div>
-          ))}
-        </ul>
-      )}
-    </section>
+    return (
+      <ul className="text-[12px]">
+        {log.map((message, index) => (
+          <div
+            key={index}
+            className={classNames('py-[2px]', {
+              'border-b': index < log.length - 1,
+            })}
+          >
+            {message}
+          </div>
+        ))}
+      </ul>
+    )
+  }
+
+  return (
+    <Card title="Console" actions={[{ label: 'Clear', action: clearLog }]}>
+      {renderLog()}
+    </Card>
   )
 }
 

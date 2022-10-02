@@ -10,7 +10,7 @@ const ThemeSettings: React.FC = () => {
   console.log('ThemeSettings: render')
 
   return (
-    <Card>
+    <Card title="ThemeSettings">
       <div className="mb-2">
         Current theme:{' '}
         <span

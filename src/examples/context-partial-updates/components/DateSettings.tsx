@@ -3,12 +3,12 @@ import Card from '../../../components/Card'
 import { useAppSettings } from '../utils/useAppSettings'
 
 const DateSettings: React.FC = () => {
-  console.log('DateSettings: render')
-
   const { dateFormat } = useAppSettings()
 
+  console.log('DateSettings: render')
+
   return (
-    <Card>
+    <Card title="DateSettings">
       Date format: <span>{dateFormat}</span>
     </Card>
   )
