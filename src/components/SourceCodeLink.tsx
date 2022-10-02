@@ -4,11 +4,19 @@ import classNames from 'classnames'
 
 interface Props {
   className?: string
+  isIndex?: boolean
 }
 
-const SourceCodeLink: React.FC<Props> = ({ className }) => {
+const REPO_URL = 'https://github.com/sajadtorkamani/react-playground'
+
+const SourceCodeLink: React.FC<Props> = ({ className, isIndex = false }) => {
   const location = useLocation()
-  const href = `https://github.com/sajadtorkamani/react-playground/blob/master/src/examples${location.pathname}.tsx`
+
+  const fileName = isIndex
+    ? `${location.pathname}/index.tsx`
+    : `${location.pathname}.tsx`
+
+  const href = `${REPO_URL}/blob/master/src/examples/${fileName}`
 
   return (
     <a

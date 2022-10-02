@@ -21,7 +21,7 @@ const ContextPartialUpdates: React.FC = () => {
       <DateSettings />
 
       <Console />
-      <SourceCodeLink />
+      <SourceCodeLink isIndex />
     </AppSettingsProvider>
   )
 }
