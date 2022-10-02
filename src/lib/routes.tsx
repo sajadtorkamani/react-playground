@@ -6,6 +6,7 @@ import UseEffectOnlyWhenDependenciesUpdate from '../examples/use-effect-only-whe
 import UseEffectCleanUpBehaviour from '../examples/use-effect-clean-up-behaviour'
 import BatchedStateUpdatesSynchronous from '../examples/batched-state-updates-synchronous'
 import BatchedStateUpdatesAsynchronousNested from '../examples/batched-state-updates--asynchronous-nested'
+import ContextPartialUpdates from '../examples/context-partial-updates'
 
 interface AppRoute {
   name: string
@@ -18,6 +19,7 @@ export const ROUTES = {
   batchedStateUpdatesSynchronous: '/batched-state-updates--synchronous',
   batchedStateUpdatesAsynchronousNested:
     '/batched-state-updates--asynchronous-nested',
+  contextPartialUpdates: '/context-partial-updates',
   useEffectCleanUpBehaviour: '/use-effect-clean-up-behaviour',
   useEffectNoDependencies: '/use-effect-no-dependencies',
   useEffectEmptyDependencies: '/use-effect-empty-dependencies',
@@ -35,6 +37,11 @@ export const AppRoutes: AppRoute[] = [
     name: 'Batched state updates (synchronous)',
     path: ROUTES.batchedStateUpdatesSynchronous,
     element: <BatchedStateUpdatesSynchronous />,
+  },
+  {
+    name: 'Context: partial updates',
+    path: ROUTES.contextPartialUpdates,
+    element: <ContextPartialUpdates />,
   },
   {
     name: 'useEffect: clean up behaviour',
